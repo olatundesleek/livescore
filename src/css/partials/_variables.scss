@@ -1,0 +1,13 @@
+// BASE-SIZE
+$base: 1.5rem;
+$base-half: 0.75rem;
+$base-double: 3rem;
+
+// COLORS
+$primary: #1a48c5;
+$primary-light: lighten($primary, 15%);
+$default: #d1d1d1;
+$default-dark: darken($default, 15%);
+$grey-dark: #444;
+$grey-light: #aaa;
+$white: #fff;
