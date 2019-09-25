@@ -195,4 +195,38 @@
 			place-items: center;
 		}
 	}
+
+	// COLORS
+	.bg {
+		// bg color for BLUE
+		&-primary {
+			background: $primary;
+		}
+		&-primary-dark {
+			background: $primary-dark;
+		}
+		&-primary-light {
+			background: $primary-light;
+		}
+		// bg color for Green
+		&-success {
+			background: $success;
+		}
+		&-success-dark {
+			background: $success-dark;
+		}
+		&-success-light {
+			background: $success-light;
+		}
+		// bg color for RED
+		&-danger {
+			background: $danger;
+		}
+		&-danger-dark {
+			background: $danger-dark;
+		}
+		&-danger-light {
+			background: $danger-light;
+		}
+	}
 }
