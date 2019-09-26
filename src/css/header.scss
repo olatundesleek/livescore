@@ -40,35 +40,41 @@ body {
 
 			&:hover .nav-bar-brand-name {
 				transform: scale($base-scale);
+				-webkit-transform: scale($base-scale);
+				-moz-transform: scale($base-scale);
+				-ms-transform: scale($base-scale);
+				-o-transform: scale($base-scale);
 			}
 
 			&-logo {
 				img {
-					@include container-round(50px);
+					@include container-round(40px);
+					height: 25px;
 					box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
-					height: 30px;
 					transform: rotate(45deg);
 					margin-right: 0.375rem;
+					-webkit-transform: rotate(45deg);
+					-moz-transform: rotate(45deg);
+					-ms-transform: rotate(45deg);
+					-o-transform: rotate(45deg);
 				}
 			}
 			&-name {
-				h6 {
-					font-size: calc(2vh + 1.5vw + 1%);
-					text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
-					position: relative;
+				font-size: 95%;
+				text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+				position: relative;
 
+				&::before {
+					@include b-a-span-full;
+					border-bottom: 3px solid $white;
+					transform-origin: left;
+					transform: scaleX(0);
+					transition: all 0.3s linear;
+				}
+
+				&:hover {
 					&::before {
-						@include b-a-span-full;
-						border-bottom: 3px solid $white;
-						transform-origin: left;
-						transform: scaleX(0);
-						transition: all 0.3s linear;
-					}
-
-					&:hover {
-						&::before {
-							transform: scaleX(1);
-						}
+						transform: scaleX(1);
 					}
 				}
 			}
@@ -109,24 +115,30 @@ body {
 
 		&-1 {
 			margin-top: $header-nav-bar-height;
+			border-bottom: 3px solid $white;
 			ul {
 				li {
 					a {
+						width: 79px;
+						padding: $base-half;
+						background: $white;
+						color: $success-dark;
 						i {
-							font-size: 160%;
+							font-size: 100%;
 						}
 
 						&:hover,
 						&.tab-active {
-							background: $white;
-							color: $success-dark;
-							border-bottom: 3px solid $success-dark;
+							color: $white;
+							background: $primary-dark;
 						}
 					}
 				}
 			}
 		}
 		&-2 {
+			margin-top: 0.375rem;
+
 			ul {
 				li {
 					a {
@@ -140,6 +152,52 @@ body {
 				}
 			}
 		}
+	}
+
+	@include screen-420 {
+		// ALL TAB-1 INSIDE A HEADER CLASS
+		.tab {
+			&-1 {
+				ul {
+					li {
+						a {
+							i {
+								font-size: 160%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include screen-500 {
+		.nav-bar {
+			img {
+				width: 50px;
+				height: 30px;
+			}
+			font-size: 130%;
+		}
+		.tab {
+			&-1 {
+				margin-top: 65px;
+				ul {
+					li {
+						a {
+							width: 110px;
+							i {
+								font-size: 160%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@include screen-900 {
+	}
+	@include screen-1240 {
 	}
 }
 
