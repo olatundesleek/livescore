@@ -53,6 +53,7 @@ body {
 			}
 			&-name {
 				h6 {
+					font-size: calc(2vh + 1.5vw + 1%);
 					text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
 					position: relative;
 
@@ -75,7 +76,11 @@ body {
 		&-icons {
 			li {
 				list-style: none;
-				padding: $base-half;
+				padding: $base-half 0;
+
+				&:nth-child(2) {
+					padding: $base-half $base;
+				}
 
 				&:hover {
 					cursor: pointer;

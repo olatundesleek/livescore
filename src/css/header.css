@@ -139,6 +139,7 @@ body {
 }
 
 .header .nav-bar-brand-name h6 {
+  font-size: calc(2vh + 1.5vw + 1%);
   text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
   position: relative;
 }
@@ -164,7 +165,11 @@ body {
 
 .header .nav-bar-icons li {
   list-style: none;
-  padding: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+.header .nav-bar-icons li:nth-child(2) {
+  padding: 0.75rem 1.5rem;
 }
 
 .header .nav-bar-icons li:hover {
