@@ -17,11 +17,18 @@
 		
     <link rel="stylesheet" type="text/css" href="src/css/colors.css" />
     <link rel="stylesheet" type="text/css" href="src/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="src/css/overlay.css">
     <link rel="stylesheet" type="text/css" href="src/css/header.css" />
     <link rel="stylesheet" type="text/css" href="src/css/main.css" />
+    <link rel="stylesheet" href="animation.css">
     <title>Livescores.com | Home</title>
   </head>
   <body>
+    <!-- GENERAL OVERLAY -->
+    <div class="overlay">
+      <i class="fa fa-refresh"></i>
+    </div>
+
     <header class="header">
       <nav class="nav-bar bg-success flex-align-center flex-wrap">
         <div class="nav-bar-brand">
@@ -29,7 +36,7 @@
             <span class="nav-bar-brand-logo">
               <img src="./src/img/logo.png" alt="site logo" />
             </span>
-            <span class="nav-bar-brand-name kilo">
+            <span class="nav-bar-brand-name">
               Livescores.com
             </span>
           </a>
@@ -45,7 +52,9 @@
         <ul class="flex">
           <li>
             <a href="#" class="tab-active">
-              <div class="tab-icon"><i class="fa fa-soccer-ball-o"></i></div>
+              <div class="tab-icon">
+                <i class="fa fa-soccer-ball-o"></i>
+              </div>
               <div class="tab-name">soccer</div></a
             >
           </li>
@@ -57,7 +66,7 @@
 					</li>
           <li>
             <a href="#"
-              ><div class="tab-icon"><i class="fa fa-soccer-ball-o"></i></div>
+              ><div class="tab-icon"><i class="fa fa-refresh"></i></div>
               <div class="tab-name">rugby</div></a
             >
           </li>
