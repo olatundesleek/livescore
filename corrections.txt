@@ -1,0 +1,30 @@
+	<!-- <div id="events-table">
+				<section class="event event-1">
+					<article class="event-team event-home-team">
+						<span class="event-home-team-name">PSG</span>
+
+						<span class="event-home-flag"
+							><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-details-current-time"><p>30</p></div>
+
+						<div class="event-details-scores">
+							<span class="event-details-scores-home-team">4</span>:<span
+								class="event-details-scores-away-team"
+								>2</span
+							>
+						</div>
+					</article>
+
+					<article class="event-team event-away-team">
+						<span class="event-away-team-name">PSG</span>
+
+						<span class="event-away-flag"
+							><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+				</section>
+			</div> -->

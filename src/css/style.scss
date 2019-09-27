@@ -1,0 +1,27 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/media";
+@import "./partials/modularTypo";
+@import "./partials/reusableClasses";
+
+// UNIVERSAL SELECTION IS SLOW :)
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 0.15s linear;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	-ms-transition: all 0.15s linear;
+	-o-transition: all 0.15s linear;
+}
+
+body {
+	background: $black;
+}
+
+@import "./partials/modules/header";
+@import "./partials/modules/main";
+
+// RE-USABLE CLASS MIXIN
+@include classes;

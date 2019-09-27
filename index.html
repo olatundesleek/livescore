@@ -1,235 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="src/font-awesome/css/font-awesome.min.css"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="src/font-awesome/css/font-awesome.min.css"
 		/>
-		
-    <link rel="stylesheet" type="text/css" href="src/css/colors.css" />
-    <link rel="stylesheet" type="text/css" href="src/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="src/css/overlay.css">
-    <link rel="stylesheet" type="text/css" href="src/css/header.css" />
-    <link rel="stylesheet" type="text/css" href="src/css/main.css" />
-    <link rel="stylesheet" href="animation.css">
-    <title>Livescores.com | Home</title>
-  </head>
-  <body>
-    <!-- GENERAL OVERLAY -->
-    <div class="overlay">
-      <i class="fa fa-refresh"></i>
-    </div>
 
-    <header class="header">
-      <nav class="nav-bar bg-success flex-align-center flex-wrap">
-        <div class="nav-bar-brand">
-          <a href="index.html" class="flex-align-center">
-            <span class="nav-bar-brand-logo">
-              <img src="./src/img/logo.png" alt="site logo" />
-            </span>
-            <span class="nav-bar-brand-name">
-              Livescores.com
-            </span>
-          </a>
-        </div>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
 
-        <ul class="nav-bar-icons flex">
-          <li class="nav-bar-icon"><i class="fa fa-search"></i></li>
-          <li class="nav-bar-icon"><i class="fa fa-user"></i></li>
-          <li class="nav-bar-icon"><i class="fa fa-bars"></i></li>
-        </ul>
-      </nav>
-      <nav class="tab tab-1 bg-primary-dark">
-        <ul class="flex">
-          <li>
-            <a href="#" class="tab-active">
-              <div class="tab-icon">
-                <i class="fa fa-soccer-ball-o"></i>
-              </div>
-              <div class="tab-name">soccer</div></a
-            >
-          </li>
+		<link rel="stylesheet" type="text/css" href="src/css/colors.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/style.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/overlay.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/header.css" />
+		<link rel="stylesheet" type="text/css" href="src/css/main.css" />
+		<link rel="stylesheet" href="animation.css" />
+		<title>Livescores.com | Home</title>
+	</head>
+	<body>
+		<!-- GENERAL OVERLAY -->
+		<div class="overlay">
+			<i class="fa fa-refresh"></i>
+		</div>
+
+		<header class="header">
+			<nav class="nav-bar bg-success flex-align-center flex-wrap">
+				<div class="nav-bar-brand">
+					<a href="index.html" class="flex-align-center">
+						<span class="nav-bar-brand-logo">
+							<img src="./src/img/logo.png" alt="site logo" />
+						</span>
+						<span class="nav-bar-brand-name">
+							Livescores.com
+						</span>
+					</a>
+				</div>
+
+				<ul class="nav-bar-icons flex">
+					<li class="nav-bar-icon"><i class="fa fa-search"></i></li>
+					<li class="nav-bar-icon"><i class="fa fa-user"></i></li>
+					<li class="nav-bar-icon"><i class="fa fa-bars"></i></li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="main">
+			<nav class="tab tab-1 bg-primary-dark">
+				<ul class="flex">
 					<li>
-						<a href="#"
-							><div class="tab-icon"><i class="fa fa-soccer-ball-o"></i></div>
-							<div class="tab-name">basketball</div></a
-						>
+						<a href="#" class="tab-active">
+							<div class="tab-icon">
+								<img
+									src="./src/svg/Soccer SVG Vectors and Icons - SVG Repo Free SVG Icons-42.svg"
+								/>
+							</div>
+							<div class="tab-name">soccer</div>
+						</a>
 					</li>
-          <li>
-            <a href="#"
-              ><div class="tab-icon"><i class="fa fa-refresh"></i></div>
-              <div class="tab-name">rugby</div></a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><div class="tab-icon"><i class="fa fa-soccer-ball-o"></i></div>
-              <div class="tab-name">tennis</div></a
-            >
-          </li>
-        </ul>
-      </nav>
-      <nav class="tab tab-2 bg-success">
-        <ul class="flex">
-          <li>
-            <a href="#" class="tab-active"> all</a>
-          </li>
-          <li>
-            <a href="#">live</a>
-          </li>
-          <li>
-            <a href="#">fixtures</a>
-          </li>
-          <li>
-            <a href="#">schedules</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div id="soccer-livescore">
-        <div class="soccer-livescore-div soccer-livescore-div-1">
-          <div class="match-time"></div>
-          <div class="home-team-name">
-            <span class="team-name-content">PSG</span
-            ><span class="team-flag"
-              ><img src="src/img/teamfiles/psglogo.png" />
-            </span>
-          </div>
-          <div class="match-detail">
-            <div class="match-current-time"><p>30</p></div>
-            <hr class="horizontal-line" />
-            <div class="match-scores">
-              4<span class="scoresdivider">:</span>1
-            </div>
-          </div>
-          <div class="away-team-name">
-            <span class="team-flag"
-              ><img src="src/img/teamfiles/chelsealogo.png" /> </span
-            ><span class="team-name-content">CHELSEA</span>
-          </div>
-        </div>
-        <div id="soccer-livescore">
-          <div class="soccer-livescore-div soccer-livescore-div-2">
-            <div class="match-time"></div>
-            <div class="home-team-name">
-              <span class="team-name-content">PSG</span
-              ><span class="team-flag"
-                ><img src="src/img/teamfiles/psglogo.png" />
-              </span>
-            </div>
-            <div class="match-detail">
-              <div class="match-current-time">
-                <p class="minute">25</p>
-                <span class="seconds"></span>
-              </div>
-              <hr class="horizontal-line" />
-              <div class="match-scores">
-                3<span class="scoresdivider">:</span>1
-              </div>
-            </div>
-            <div class="away-team-name">
-              <span class="team-flag"
-                ><img src="src/img/teamfiles/chelsealogo.png" /> </span
-              ><span class="team-name-content">CHELSEA</span>
-            </div>
-          </div>
-        </div>
-        <div class="soccer-livescore-div soccer-livescore-div-3">
-          <div class="match-time"></div>
-          <div class="home-team-name">
-            <span class="team-name-content">PSG</span
-            ><span class="team-flag"
-              ><img src="src/img/teamfiles/psglogo.png" />
-            </span>
-          </div>
-          <div class="match-detail">
-            <div class="match-current-time"><p>30</p></div>
-            <hr class="horizontal-line" />
-            <div class="match-scores">
-              4<span class="scoresdivider">:</span>1
-            </div>
-          </div>
-          <div class="away-team-name">
-            <span class="team-flag"
-              ><img src="src/img/teamfiles/chelsealogo.png" /> </span
-            ><span class="team-name-content">CHELSEA</span>
-          </div>
-        </div>
-        <div class="soccer-livescore-div soccer-livescore-div-4">
-          <div class="match-time"></div>
-          <div class="home-team-name">
-            <span class="team-name-content">PSG</span
-            ><span class="team-flag"
-              ><img src="src/img/teamfiles/psglogo.png" />
-            </span>
-          </div>
-          <div class="match-detail">
-            <div class="match-current-time"><p>30</p></div>
-            <hr class="horizontal-line" />
-            <div class="match-scores">
-              4<span class="scoresdivider">:</span>1
-            </div>
-          </div>
-          <div class="away-team-name">
-            <span class="team-flag"
-              ><img src="src/img/teamfiles/chelsealogo.png" /> </span
-            ><span class="team-name-content">CHELSEA</span>
-          </div>
-        </div>
-        <div class="soccer-livescore-div soccer-livescore-div-5">
-          <div class="match-time"></div>
-          <div class="home-team-name">
-            <span class="team-name-content">PSG</span
-            ><span class="team-flag"
-              ><img src="src/img/teamfiles/psglogo.png" />
-            </span>
-          </div>
-          <div class="match-detail">
-            <div class="match-current-time"><p>30</p></div>
-            <hr class="horizontal-line" />
-            <div class="match-scores">
-              4<span class="scoresdivider">:</span>1
-            </div>
-          </div>
-          <div class="away-team-name">
-            <span class="team-flag"
-              ><img src="src/img/teamfiles/chelsealogo.png" /> </span
-            ><span class="team-name-content">CHELSEA</span>
-          </div>
-        </div>
-        <div class="soccer-livescore-div soccer-livescore-div-6">
-          <div class="match-time"></div>
-          <div class="home-team-name">
-            <span class="team-name-content">PSG</span
-            ><span class="team-flag"
-              ><img src="src/img/teamfiles/psglogo.png" />
-            </span>
-          </div>
-          <div class="match-detail">
-            <div class="match-current-time"><p>30</p></div>
-            <hr class="horizontal-line" />
-            <div class="match-scores">
-              4<span class="scoresdivider">:</span>1
-            </div>
-          </div>
-          <div class="away-team-name">
-            <span class="team-flag"
-              ><img src="src/img/teamfiles/chelsealogo.png" /> </span
-            ><span class="team-name-content">CHELSEA</span>
-          </div>
-        </div>
-      </div>
-    </main>
-    <footer></footer>
-  </body>
+					<li>
+						<a href="#">
+							<div class="tab-icon">
+								<img src="./src/svg/ball-of-basketball.svg" />
+							</div>
+							<div class="tab-name">basketball</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="tab-icon">
+								<img src="./src/svg//083-Rugby ball.svg" />
+							</div>
+							<div class="tab-name">rugby</div>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<div class="tab-icon">
+								<img src="./src/svg/tennis-ball-svgrepo-com.svg" />
+							</div>
+							<div class="tab-name">tennis</div>
+						</a>
+					</li>
+				</ul>
+			</nav>
+
+			<nav class="tab tab-2 bg-success">
+				<ul class="flex">
+					<li>
+						<a href="#" class="tab-active"> all</a>
+					</li>
+					<li>
+						<a href="#">live</a>
+					</li>
+					<li>
+						<a href="#">fixtures</a>
+					</li>
+					<li>
+						<a href="#">schedules</a>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="soccer-livescore">
+				<div class="soccer-livescore-div soccer-livescore-div-1">
+					<div class="match-time"></div>
+					<div class="home-team-name">
+						<span class="team-name-content">PSG</span
+						><span class="team-flag"
+							><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</div>
+					<div class="match-detail">
+						<div class="match-current-time"><p>30</p></div>
+						<hr class="horizontal-line" />
+						<div class="match-scores">
+							4<span class="scoresdivider">:</span>1
+						</div>
+					</div>
+					<div class="away-team-name">
+						<span class="team-flag"
+							><img src="src/img/teamfiles/chelsealogo.png" /> </span
+						><span class="team-name-content">PSG</span>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer></footer>
+	</body>
 </html>
