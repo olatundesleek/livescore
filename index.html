@@ -1,136 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="src/font-awesome/css/font-awesome.min.css"
-		/>
 
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<link rel="stylesheet" type="text/css" href="src/font-awesome/css/font-awesome.min.css" />
 
-		<link rel="stylesheet" type="text/css" href="src/css/colors.css" />
-		<link rel="stylesheet" type="text/css" href="src/css/style.css" />
-		<link rel="stylesheet" type="text/css" href="src/css/overlay.css" />
-		<link rel="stylesheet" type="text/css" href="src/css/header.css" />
-		<link rel="stylesheet" type="text/css" href="src/css/main.css" />
-		<link rel="stylesheet" href="animation.css" />
-		<title>Livescores.com | Home</title>
-	</head>
-	<body>
-		<!-- GENERAL OVERLAY -->
-		<div class="overlay">
-			<i class="fa fa-refresh"></i>
-		</div>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-		<header class="header">
-			<nav class="nav-bar bg-success flex-align-center flex-wrap">
-				<div class="nav-bar-brand">
-					<a href="index.html" class="flex-align-center">
-						<span class="nav-bar-brand-logo">
-							<img src="./src/img/logo.png" alt="site logo" />
-						</span>
-						<span class="nav-bar-brand-name">
-							Livescores.com
-						</span>
-					</a>
-				</div>
+	<link rel="stylesheet" href="src/css/colors.css" />
+	<link rel="stylesheet" href="src/css/style.css" />
+	<title>Livescores.com | Home</title>
+</head>
 
-				<ul class="nav-bar-icons flex">
-					<li class="nav-bar-icon"><i class="fa fa-search"></i></li>
-					<li class="nav-bar-icon"><i class="fa fa-user"></i></li>
-					<li class="nav-bar-icon"><i class="fa fa-bars"></i></li>
-				</ul>
-			</nav>
-		</header>
+<body>
+	<!-- GENERAL OVERLAY -->
+	<div class="overlay-loader grid-center">
+		<!-- football svg -->
+		<i class="fa fa-soccer-ball-o"></i>
+		<div class="loader"></div>
+	</div>
 
-		<main class="main">
-			<nav class="tab tab-1 bg-primary-dark">
-				<ul class="flex">
-					<li>
-						<a href="#" class="tab-active">
-							<div class="tab-icon">
-								<img
-									src="./src/svg/Soccer SVG Vectors and Icons - SVG Repo Free SVG Icons-42.svg"
-								/>
-							</div>
-							<div class="tab-name">soccer</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="tab-icon">
-								<img src="./src/svg/ball-of-basketball.svg" />
-							</div>
-							<div class="tab-name">basketball</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="tab-icon">
-								<img src="./src/svg//083-Rugby ball.svg" />
-							</div>
-							<div class="tab-name">rugby</div>
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<div class="tab-icon">
-								<img src="./src/svg/tennis-ball-svgrepo-com.svg" />
-							</div>
-							<div class="tab-name">tennis</div>
-						</a>
-					</li>
-				</ul>
-			</nav>
-
-			<nav class="tab tab-2 bg-success">
-				<ul class="flex">
-					<li>
-						<a href="#" class="tab-active"> all</a>
-					</li>
-					<li>
-						<a href="#">live</a>
-					</li>
-					<li>
-						<a href="#">fixtures</a>
-					</li>
-					<li>
-						<a href="#">schedules</a>
-					</li>
-				</ul>
-			</nav>
-
-			<div id="soccer-livescore">
-				<div class="soccer-livescore-div soccer-livescore-div-1">
-					<div class="match-time"></div>
-					<div class="home-team-name">
-						<span class="team-name-content">PSG</span
-						><span class="team-flag"
-							><img src="src/img/teamfiles/psglogo.png" />
-						</span>
-					</div>
-					<div class="match-detail">
-						<div class="match-current-time"><p>30</p></div>
-						<hr class="horizontal-line" />
-						<div class="match-scores">
-							4<span class="scoresdivider">:</span>1
-						</div>
-					</div>
-					<div class="away-team-name">
-						<span class="team-flag"
-							><img src="src/img/teamfiles/chelsealogo.png" /> </span
-						><span class="team-name-content">PSG</span>
-					</div>
-				</div>
+	<header id="header">
+		<nav class="nav-bar bg-success flex-align-center flex-wrap">
+			<div class="nav-bar-brand">
+				<a href="index.html" class="flex-align-center">
+					<span class="nav-bar-brand-logo">
+						<img src="./src/img/logo.png" alt="site logo" />
+					</span>
+					<span class="nav-bar-brand-name">
+						Livescores.com
+					</span>
+				</a>
 			</div>
-		</main>
-		<footer></footer>
-	</body>
+
+			<ul class="nav-bar-icons flex">
+				<li class="nav-bar-icon"><i class="fa fa-search nav-bar-search-icon"></i></li>
+				<li class="nav-bar-icon"><i class="fa fa-user nav-bar-user-icon"></i></li>
+				<li class="nav-bar-icon"><i class="fa fa-bars nav-bar-bars-icon"></i></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main id="main">
+		<nav class="tab tab-1 bg-primary-dark">
+			<ul class="flex">
+				<li>
+					<a href="#" class="tab-active">
+						<div class="tab-icon">
+							<img src="./src/svg/Soccer SVG Vectors and Icons - SVG Repo Free SVG Icons-42.svg" />
+						</div>
+						<div class="tab-name">soccer</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="tab-icon">
+							<img src="./src/svg/ball-of-basketball.svg" />
+						</div>
+						<div class="tab-name">basketball</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="tab-icon">
+							<img src="./src/svg//083-Rugby ball.svg" />
+						</div>
+						<div class="tab-name">rugby</div>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<div class="tab-icon">
+							<img src="./src/svg/tennis-ball-svgrepo-com.svg" />
+						</div>
+						<div class="tab-name">tennis</div>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+		<nav class="tab tab-2 bg-success">
+			<ul class="flex">
+				<li>
+					<a href="#" class="tab-active"> all</a>
+				</li>
+				<li>
+					<a href="#">live</a>
+				</li>
+				<li>
+					<a href="#">f`ixtures</a>
+				</li>
+				<li>
+					<a href="#">schedules</a>
+				</li>
+			</ul>
+		</nav>
+
+		<div id="events-table">
+			<section class="league">
+				<article class="league-name pad-l-1-2">
+					<h6 class="milli">premier league</h6>
+				</article>
+
+				<section class="event event-1 grid-justify-center">
+					<article class="event-team event-team-home grid-center">
+						<span class="event-team-name">
+							<h6 class="milli p-0">PSG</h6>
+						</span>
+
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-detail event-detail-current-time flex-center">
+							<span>30'</span>
+						</div>
+
+						<div class="event-detail event-detail-scoreboard flex-center">
+							<div>
+								<span class="event-detail-score event-details-score-team-home">4</span>:<span
+									class="event-detail-score event-details-score-team-away">2</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="event-team event-team-away grid-center">
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+
+						<span class="event-team-name">
+							<h6 class="milli p-0">psg</h6>
+						</span>
+					</article>
+				</section>
+
+				<section class="event event-2 grid-justify-center">
+					<article class="event-team event-team-home grid-center">
+						<span class="event-team-name">
+							<h6 class="milli p-0">PSG</h6>
+						</span>
+
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-detail event-detail-current-time flex-center">
+							<span>30'</span>
+						</div>
+
+						<div class="event-detail event-detail-scoreboard flex-center">
+							<div>
+								<span class="event-detail-score event-details-score-team-home">4</span>:<span
+									class="event-detail-score event-details-score-team-away">2</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="event-team event-team-away grid-center">
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+
+						<span class="event-team-name">
+							<h6 class="milli p-0">psg</h6>
+						</span>
+					</article>
+				</section>
+			</section>
+
+			<section class="league">
+				<article class="league-name pad-l-1-2">
+					<h6 class="milli">bundesliga</h6>
+				</article>
+
+				<section class="event event-1 grid-justify-center">
+					<article class="event-team event-team-home grid-center">
+						<span class="event-team-name">
+							<h6 class="milli p-0">PSG</h6>
+						</span>
+
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-detail event-detail-current-time flex-center">
+							<span>30'</span>
+						</div>
+
+						<div class="event-detail event-detail-scoreboard flex-center">
+							<div>
+								<span class="event-detail-score event-details-score-team-home">4</span>:<span
+									class="event-detail-score event-details-score-team-away">2</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="event-team event-team-away grid-center">
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+
+						<span class="event-team-name">
+							<h6 class="milli p-0">psg</h6>
+						</span>
+					</article>
+				</section>
+
+				<section class="event event-2 grid-justify-center">
+					<article class="event-team event-team-home grid-center">
+						<span class="event-team-name">
+							<h6 class="milli p-0">PSG</h6>
+						</span>
+
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-detail event-detail-current-time flex-center">
+							<span>30'</span>
+						</div>
+
+						<div class="event-detail event-detail-scoreboard flex-center">
+							<div>
+								<span class="event-detail-score event-details-score-team-home">4</span>:<span
+									class="event-detail-score event-details-score-team-away">2</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="event-team event-team-away grid-center">
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+
+						<span class="event-team-name">
+							<h6 class="milli p-0">psg</h6>
+						</span>
+					</article>
+				</section>
+			</section>
+
+			<section class="league">
+				<article class="league-name pad-l-1-2">
+					<h6 class="milli">champions league</h6>
+				</article>
+
+				<section class="event event-1 grid-justify-center">
+					<article class="event-team event-team-home grid-center">
+						<span class="event-team-name">
+							<h6 class="milli p-0">PSG</h6>
+						</span>
+
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-detail event-detail-current-time flex-center">
+							<span>30'</span>
+						</div>
+
+						<div class="event-detail event-detail-scoreboard flex-center">
+							<div>
+								<span class="event-detail-score event-details-score-team-home">4</span>:<span
+									class="event-detail-score event-details-score-team-away">2</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="event-team event-team-away grid-center">
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+
+						<span class="event-team-name">
+							<h6 class="milli p-0">psg</h6>
+						</span>
+					</article>
+				</section>
+
+				<section class="event event-2 grid-justify-center">
+					<article class="event-team event-team-home grid-center">
+						<span class="event-team-name">
+							<h6 class="milli p-0">PSG</h6>
+						</span>
+
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+					</article>
+
+					<article class="event-details">
+						<div class="event-detail event-detail-current-time flex-center">
+							<span>30'</span>
+						</div>
+
+						<div class="event-detail event-detail-scoreboard flex-center">
+							<div>
+								<span class="event-detail-score event-details-score-team-home">4</span>:<span
+									class="event-detail-score event-details-score-team-away">2</span>
+							</div>
+						</div>
+					</article>
+
+					<article class="event-team event-team-away grid-center">
+						<span class="event-team-logo"><img src="src/img/teamfiles/psglogo.png" />
+						</span>
+
+						<span class="event-team-name">
+							<h6 class="milli p-0">psg</h6>
+						</span>
+					</article>
+				</section>
+			</section>
+		</div>
+	</main>
+	<footer></footer>
+	<!-- js custom file -->
+	<script type="module" src="./src/js/app.js"></script>
+</body>
+
 </html>

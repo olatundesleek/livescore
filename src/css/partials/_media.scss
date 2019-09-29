@@ -1,3 +1,8 @@
+@mixin screen-360 {
+	@media only screen and (min-width: 360px) {
+		@content;
+	}
+}
 @mixin screen-420 {
 	@media only screen and (min-width: 420px) {
 		@content;

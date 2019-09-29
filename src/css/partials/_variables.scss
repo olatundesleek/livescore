@@ -15,7 +15,7 @@ $header-nav-bar-height: 61px;
 // BLUE
 // $primary: #1a48c5;
 $primary: #0092c6;
-$primary-light: lighten($primary, 15%);
+$primary-light: lighten($primary, 5%);
 $primary-dark: darken($primary, 15%);
 
 // GREEN
@@ -30,8 +30,8 @@ $danger-light: lighten($danger, 15%);
 $danger-dark: darken($danger, 15%);
 
 // FREQUENTLY USED
-// $default: #d1d1d1;
-// $default-dark: darken($default, 15%);
+$default: #d1d1d1;
+$default-dark: darken($default, 15%);
 // $grey-dark: #444;
 // $grey-light: #aaa;
 $grey: #8d95b1;

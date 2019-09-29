@@ -1,22 +1,96 @@
+// containers for big sections eg main, header, footer ...
 @mixin container($w: 100%, $h: 100vh, $overflow-y: auto) {
-	width: $w;
-	height: $h;
-	overflow-y: $overflow-y;
+  width: $w;
+  height: $h;
+  overflow-y: $overflow-y;
 }
+// rounded container
 @mixin container-round($w-h) {
-	border-radius: 50%;
-	width: $w-h;
-	height: $w-h;
+  border-radius: 50%;
+  width: $w-h;
+  height: $w-h;
 }
-
+// the same width and height
 @mixin w-h($w-h) {
-	width: $w-h;
-	height: $w-h;
+  width: $w-h;
+  height: $w-h;
 }
-
+// before and after span full
 @mixin b-a-span-full {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: 100%;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+// animations
+@mixin animations {
+  @keyframes spin-loader-ball {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(720deg);
+    }
+  }
+
+  @keyframes loader-dots {
+    0% {
+      border-top-color: $white;
+    }
+    30% {
+      border-bottom-color: $white;
+    }
+    65% {
+      border-left-color: $white;
+    }
+    100% {
+      border-right-color: $white;
+    }
+  }
+
+  @keyframes overlay-loader-fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes overlay-loader-fade-to-top {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-100%);
+      -webkit-transform: translateY(-100%);
+      -moz-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+      -o-transform: translateY(-100%);
+    }
+  }
+  @keyframes overlay-loader-fade-to-bottom {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(100%);
+      -webkit-transform: translateY(100%);
+      -moz-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+      -o-transform: translateY(100%);
+    }
+  }
 }

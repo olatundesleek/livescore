@@ -1,4 +1,11 @@
 /**
+* before using any partial (_reusableClasses.scss ...), 
+* module (_header.scss, _main.scss ...),
+* mixin (animations, w-h, container-round ...),
+* or anything at all (which you did not write)
+* please check them out 1st, to correct or to know how they work. thanks...
+*/
+/**
 * TYPE-SCALE = MAJOR SCALE (1.125);
 * BASE-LINE-HEIGHT = (1.5)(24PX);
 * 
@@ -7,15 +14,6 @@
 */
 html {
   font: normal 100%/1.5 Arial, sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 1.5rem;
 }
 
 .xxLarge {
@@ -93,30 +91,76 @@ small,
 }
 
 body {
-  background: #2a2e3e;
+  background: #f7f4f4;
 }
 
-.header {
-  color: #f7f4f4;
-}
-
-.header .nav-bar {
+.overlay-loader {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 1;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0092c6;
+  z-index: 20;
+  -webkit-animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
+          animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
+}
+
+.overlay-loader i {
+  width: 65px;
+  height: 65px;
+  font-size: 45px;
+  color: #f7f4f4;
+  -webkit-animation: spin-loader-ball 1s ease-out infinite;
+          animation: spin-loader-ball 1s ease-out infinite;
+}
+
+.overlay-loader .loader {
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 5px dotted transparent;
+  animation: loader-dots 0.6s infinite alternate-reverse;
+}
+
+@media only screen and (min-width: 900px) {
+  .overlay-loader i {
+    font-size: 25px;
+  }
+  .overlay-loader .loader {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+  }
+}
+
+#header {
+  color: #f7f4f4;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+#header .nav-bar {
   -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
           box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
   padding: 0.375rem 0.75rem;
 }
 
-.header .nav-bar-brand {
+#header .nav-bar-brand {
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
 }
 
-.header .nav-bar-brand a {
+#header .nav-bar-brand a {
   text-decoration: none;
   color: #f7f4f4;
   width: -webkit-fit-content;
@@ -124,7 +168,7 @@ body {
   width: fit-content;
 }
 
-.header .nav-bar-brand:hover .nav-bar-brand-name {
+#header .nav-bar-brand:hover .nav-bar-brand-name {
   transform: scale(1.05);
   -webkit-transform: scale(1.05);
   -moz-transform: scale(1.05);
@@ -132,7 +176,7 @@ body {
   -o-transform: scale(1.05);
 }
 
-.header .nav-bar-brand-logo img {
+#header .nav-bar-brand-logo img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
@@ -147,13 +191,13 @@ body {
   -o-transform: rotate(45deg);
 }
 
-.header .nav-bar-brand-name {
+#header .nav-bar-brand-name {
   font-size: 95%;
   text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
   position: relative;
 }
 
-.header .nav-bar-brand-name::before {
+#header .nav-bar-brand-name::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -163,25 +207,25 @@ body {
           transform-origin: left;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
 }
 
-.header .nav-bar-brand-name:hover::before {
+#header .nav-bar-brand-name:hover::before {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
 
-.header .nav-bar-icons li {
+#header .nav-bar-icons li {
   list-style: none;
   padding: 0.75rem 0;
 }
 
-.header .nav-bar-icons li:nth-child(2) {
+#header .nav-bar-icons li:nth-child(2) {
   padding: 0.75rem 1.5rem;
 }
 
-.header .nav-bar-icons li:hover {
+#header .nav-bar-icons li:hover {
   cursor: pointer;
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
@@ -189,24 +233,24 @@ body {
 }
 
 @media only screen and (min-width: 500px) {
-  .header .nav-bar {
+  #header .nav-bar {
     font-size: 130%;
   }
-  .header .nav-bar img {
+  #header .nav-bar img {
     width: 50px;
     height: 30px;
   }
 }
 
-.main {
+#main {
   color: #fff;
 }
 
-.main .tab ul li {
+#main .tab ul li {
   display: inline-block;
 }
 
-.main .tab ul li a {
+#main .tab ul li a {
   text-decoration: none;
   color: #f7f4f4;
   display: block;
@@ -214,12 +258,7 @@ body {
   line-height: 1;
 }
 
-.main .tab-1 {
-  margin-top: 61px;
-  border-bottom: 3px solid #f7f4f4;
-}
-
-.main .tab-1 ul li a {
+#main .tab-1 ul li a {
   padding: 0.75rem 0;
   width: 79px;
   background: #f7f4f4;
@@ -227,156 +266,197 @@ body {
   border-right: 0.5px solid rgba(0, 0, 0, 0.5);
 }
 
-.main .tab-1 ul li a img {
+#main .tab-1 ul li a img {
   width: 30px;
   height: 30px;
+  opacity: 0.5;
+  transition: 2s ease-out;
+  -webkit-transition: 2s ease-out;
+  -moz-transition: 2s ease-out;
+  -ms-transition: 2s ease-out;
+  -o-transition: 2s ease-out;
 }
 
-.main .tab-1 ul li a:hover, .main .tab-1 ul li a.tab-active {
+#main .tab-1 ul li a:hover, #main .tab-1 ul li a.tab-active {
   color: #f7f4f4;
   background: #005a7a;
 }
 
-.main .tab-2 ul li a {
+#main .tab-1 ul li a:hover img, #main .tab-1 ul li a.tab-active img {
+  opacity: 1;
+  transform: rotate(360deg) scale(1.08);
+  -webkit-transform: rotate(360deg) scale(1.08);
+  -moz-transform: rotate(360deg) scale(1.08);
+  -ms-transform: rotate(360deg) scale(1.08);
+  -o-transform: rotate(360deg) scale(1.08);
+}
+
+#main .tab-2 {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 60px;
+  z-index: 2;
+  border-top: 3px solid #f7f4f4;
+  -webkit-box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+#main .tab-2 ul li a {
   border-right: 0.5px solid rgba(225, 225, 225, 0.5);
   padding: 0.75rem 1rem;
 }
 
-.main .tab-2 ul li a:hover, .main .tab-2 ul li a.tab-active {
-  border-top: 1.5px solid #2a2e3e;
-  border-bottom: 1.5px solid #2a2e3e;
+#main .tab-2 ul li a:hover, #main .tab-2 ul li a.tab-active {
+  border-top: 1.5px solid #f7f4f4;
+  border-bottom: 1.5px solid #f7f4f4;
   -webkit-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
           box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2);
   font-size: 90%;
 }
 
+#main #events-table .league {
+  border-width: 3px;
+  border-style: solid;
+}
+
+#main #events-table .league-name {
+  text-transform: capitalize;
+}
+
+#main #events-table .league:nth-child(odd) {
+  border-color: #005a7a;
+}
+
+#main #events-table .league:nth-child(odd) .league-name {
+  background: #005a7a;
+}
+
+#main #events-table .league:nth-child(even) {
+  border-color: #0092c6;
+}
+
+#main #events-table .league:nth-child(even) .league-name {
+  background: #0092c6;
+}
+
+#main #events-table .league .event {
+  position: relative;
+  padding: 0 0.375rem;
+  -ms-grid-columns: 1fr 55px 1fr;
+      grid-template-columns: 1fr 55px 1fr;
+}
+
+#main #events-table .league .event-team {
+  position: relative;
+  z-index: 1;
+}
+
+#main #events-table .league .event-team-name {
+  text-transform: uppercase;
+}
+
+#main #events-table .league .event-team-logo img {
+  width: 40px;
+  height: 40px;
+  margin: 0.375rem;
+}
+
+#main #events-table .league .event-team-home {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#main #events-table .league .event-team-away {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#main #events-table .league .event-details {
+  position: relative;
+  z-index: 1;
+  background: rgba(106, 212, 186, 0.4);
+}
+
+#main #events-table .league .event-details .event-detail {
+  width: 55px;
+  height: 40px;
+}
+
+#main #events-table .league .event-details .event-detail-scoreboard .event-detail-score {
+  padding: 0 0.1375rem;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+#main #events-table .league .event-details .event-detail-current-time {
+  border-bottom: 2px solid #f7f4f4;
+  border-top: 1px solid rgba(255, 255, 255, 0.312);
+}
+
+#main #events-table .league .event::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 0 -100px;
+  filter: blur(2px) opacity(0.75);
+  -webkit-filter: blur(2px) opacity(0.75);
+  -webkit-box-shadow: inset 0 -15px 25px 7.5px #000;
+          box-shadow: inset 0 -15px 25px 7.5px #000;
+}
+
+#main #events-table .league .event-1::before {
+  background-image: url("../img/teamfiles/stadium1.jpg");
+}
+
+#main #events-table .league .event-2::before {
+  background-image: url("../img/teamfiles/stadium2.jpg");
+}
+
+#main #events-table .league .event-3::before {
+  background-image: url("../img/teamfiles/stadium3.jpg");
+}
+
+#main #events-table .league .event-4::before {
+  background-image: url("../img/teamfiles/stadium4.jpg");
+}
+
+#main #events-table .league .event-5::before {
+  background-image: url("../img/teamfiles/stadium5.jpg");
+}
+
+@media only screen and (min-width: 360px) {
+  #main #events-table .event-team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
 @media only screen and (min-width: 420px) {
-  .main .tab-1 ul li a i {
+  #main .tab-1 ul li a i {
     font-size: 160%;
   }
 }
 
 @media only screen and (min-width: 500px) {
-  .main .tab-1 {
-    margin-top: 68px;
-  }
-  .main .tab-1 ul li a {
+  #main .tab-1 ul li a {
     width: 110px;
   }
-  .main .tab-1 ul li a i {
+  #main .tab-1 ul li a i {
     font-size: 160%;
   }
-}
-
-.soccer-livescore-div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: 80px;
-}
-
-.soccer-livescore-div-overlay {
-  background-color: #8d95b1;
-  opacity: 0.5;
-}
-
-.team-flag img {
-  width: 40px;
-  height: 40px;
-}
-
-.home-team-name {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  text-align: right;
-  padding: 20px;
-}
-
-.away-team-name {
-  -webkit-box-flex: 3;
-      -ms-flex: 3;
-          flex: 3;
-  text-align: left;
-  padding: 20px 10px;
-}
-
-.match-detail {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: rgba(54, 188, 155, 0.5);
-}
-
-.match-current-time {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: center;
-  padding-top: 10px;
-}
-
-.horizontal-line {
-  color: #fff;
-  opacity: 0.5;
-}
-
-.match-scores {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1em;
-  cursor: pointer;
-}
-
-.team-name-content {
-  vertical-align: 10px;
-  padding: 0px 10px;
-}
-
-.soccer-livescore-div-1 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 104, 104, 0.5)), to(rgba(122, 122, 122, 0.5))), url("../img/teamfiles/stadium1.jpg");
-  background: linear-gradient(rgba(104, 104, 104, 0.5), rgba(122, 122, 122, 0.5)), url("../img/teamfiles/stadium1.jpg");
-  background-size: cover;
-}
-
-.soccer-livescore-div-2 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 104, 104, 0.5)), to(rgba(122, 122, 122, 0.5))), url("../img/teamfiles/stadium2.jpg");
-  background: linear-gradient(rgba(104, 104, 104, 0.5), rgba(122, 122, 122, 0.5)), url("../img/teamfiles/stadium2.jpg");
-  background-size: cover;
-}
-
-.soccer-livescore-div-3 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 104, 104, 0.5)), to(rgba(122, 122, 122, 0.5))), url("../img/teamfiles/stadium3.jpg");
-  background: linear-gradient(rgba(104, 104, 104, 0.5), rgba(122, 122, 122, 0.5)), url("../img/teamfiles/stadium3.jpg");
-  background-size: contain;
-}
-
-.soccer-livescore-div-4 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 104, 104, 0.5)), to(rgba(122, 122, 122, 0.5))), url("../img/teamfiles/stadium4.jpg");
-  background: linear-gradient(rgba(104, 104, 104, 0.5), rgba(122, 122, 122, 0.5)), url("../img/teamfiles/stadium4.jpg");
-  background-size: contain;
-}
-
-.soccer-livescore-div-5 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 104, 104, 0.5)), to(rgba(122, 122, 122, 0.5))), url("../img/teamfiles/stadium1.jpg");
-  background: linear-gradient(rgba(104, 104, 104, 0.5), rgba(122, 122, 122, 0.5)), url("../img/teamfiles/stadium1.jpg");
-  background-size: contain;
-}
-
-.soccer-livescore-div-6 {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(104, 104, 104, 0.5)), to(rgba(122, 122, 122, 0.5))), url("../img/teamfiles/stadium2.jpg");
-  background: linear-gradient(rgba(104, 104, 104, 0.5), rgba(122, 122, 122, 0.5)), url("../img/teamfiles/stadium2.jpg");
-  background-size: cover;
+  #main .tab-2 {
+    top: 61px;
+  }
 }
 
 /** MARGIN-BASE,  MARGIN-DOUBLE,  MARGIN-HALF,  MARGIN-NONE
@@ -595,7 +675,7 @@ body {
           flex-grow: 1;
 }
 
-.grid, .grid-2-cols, .grid-3-cols, .grid-4-cols, .grid-center {
+.grid, .grid-2-cols, .grid-3-cols, .grid-4-cols, .grid-center, .grid-align-center, .grid-justify-center {
   display: -ms-grid;
   display: grid;
 }
@@ -619,6 +699,18 @@ body {
   place-items: center;
 }
 
+.grid-align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-justify-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .bg-primary {
   background: #0092c6;
 }
@@ -628,7 +720,7 @@ body {
 }
 
 .bg-primary-light {
-  background: #14c1ff;
+  background: #00a5e0;
 }
 
 .bg-success {
@@ -653,5 +745,151 @@ body {
 
 .bg-danger-light {
   background: #eda49a;
+}
+
+@-webkit-keyframes spin-loader-ball {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@keyframes spin-loader-ball {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(720deg);
+            transform: rotate(720deg);
+  }
+}
+
+@-webkit-keyframes loader-dots {
+  0% {
+    border-top-color: #f7f4f4;
+  }
+  30% {
+    border-bottom-color: #f7f4f4;
+  }
+  65% {
+    border-left-color: #f7f4f4;
+  }
+  100% {
+    border-right-color: #f7f4f4;
+  }
+}
+
+@keyframes loader-dots {
+  0% {
+    border-top-color: #f7f4f4;
+  }
+  30% {
+    border-bottom-color: #f7f4f4;
+  }
+  65% {
+    border-left-color: #f7f4f4;
+  }
+  100% {
+    border-right-color: #f7f4f4;
+  }
+}
+
+@-webkit-keyframes overlay-loader-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes overlay-loader-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes overlay-loader-fade-to-top {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+}
+
+@keyframes overlay-loader-fade-to-top {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+  }
+}
+
+@-webkit-keyframes overlay-loader-fade-to-bottom {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+  }
+}
+
+@keyframes overlay-loader-fade-to-bottom {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    -moz-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    -o-transform: translateY(100%);
+  }
 }
 /*# sourceMappingURL=style.css.map */

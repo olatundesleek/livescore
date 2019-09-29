@@ -1,98 +1,98 @@
 // ALL ELEMENTS WITH THE HEADER CLASS
-.header {
-	color: $white;
+#header {
+  color: $white;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 
-	// ALL CLASSES NAV-BAR INSIDE A HEADER CLASS
-	.nav-bar {
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: 1;
-		box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-		padding: 0.375rem $base-half;
+  // ALL CLASSES NAV-BAR INSIDE A HEADER CLASS
+  .nav-bar {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    padding: 0.375rem $base-half;
 
-		&-brand {
-			flex: auto;
+    &-brand {
+      flex: auto;
 
-			a {
-				text-decoration: none;
-				color: $white;
-				width: fit-content;
-			}
+      a {
+        text-decoration: none;
+        color: $white;
+        width: fit-content;
+      }
 
-			&:hover .nav-bar-brand-name {
-				transform: scale($base-scale);
-				-webkit-transform: scale($base-scale);
-				-moz-transform: scale($base-scale);
-				-ms-transform: scale($base-scale);
-				-o-transform: scale($base-scale);
-			}
+      &:hover .nav-bar-brand-name {
+        transform: scale($base-scale);
+        -webkit-transform: scale($base-scale);
+        -moz-transform: scale($base-scale);
+        -ms-transform: scale($base-scale);
+        -o-transform: scale($base-scale);
+      }
 
-			&-logo {
-				img {
-					@include container-round(40px);
-					height: 25px;
-					box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
-					transform: rotate(45deg);
-					margin-right: 0.375rem;
-					-webkit-transform: rotate(45deg);
-					-moz-transform: rotate(45deg);
-					-ms-transform: rotate(45deg);
-					-o-transform: rotate(45deg);
-				}
-			}
-			&-name {
-				font-size: 95%;
-				text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
-				position: relative;
+      &-logo {
+        img {
+          @include container-round(40px);
+          height: 25px;
+          box-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+          transform: rotate(45deg);
+          margin-right: 0.375rem;
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+        }
+      }
+      &-name {
+        font-size: 95%;
+        text-shadow: 0 10px 5px rgba(0, 0, 0, 0.4);
+        position: relative;
 
-				&::before {
-					@include b-a-span-full;
-					border-bottom: 3px solid $white;
-					transform-origin: left;
-					transform: scaleX(0);
-					transition: all 0.3s linear;
-				}
+        &::before {
+          @include b-a-span-full;
+          border-bottom: 3px solid $white;
+          transform-origin: left;
+          transform: scaleX(0);
+          transition: all 0.15s linear;
+        }
 
-				&:hover {
-					&::before {
-						transform: scaleX(1);
-					}
-				}
-			}
-		}
-		&-icons {
-			li {
-				list-style: none;
-				padding: $base-half 0;
+        &:hover {
+          &::before {
+            transform: scaleX(1);
+          }
+        }
+      }
+    }
+    &-icons {
+      li {
+        list-style: none;
+        padding: $base-half 0;
 
-				&:nth-child(2) {
-					padding: $base-half $base;
-				}
+        &:nth-child(2) {
+          padding: $base-half $base;
+        }
 
-				&:hover {
-					cursor: pointer;
-					transform: scale($base-scale);
-					color: $success-dark;
-				}
-			}
-		}
-	}
+        &:hover {
+          cursor: pointer;
+          transform: scale($base-scale);
+          color: $success-dark;
+        }
+      }
+    }
+  }
 
-	@include screen-420 {
-	}
-
-	@include screen-500 {
-		.nav-bar {
-			img {
-				width: 50px;
-				height: 30px;
-			}
-			font-size: 130%;
-		}
-	}
-	@include screen-900 {
-	}
-	@include screen-1240 {
-	}
+  @include screen-360 {
+  }
+  @include screen-420 {
+  }
+  @include screen-500 {
+    .nav-bar {
+      img {
+        width: 50px;
+        height: 30px;
+      }
+      font-size: 130%;
+    }
+  }
+  @include screen-900 {
+  }
+  @include screen-1240 {
+  }
 }

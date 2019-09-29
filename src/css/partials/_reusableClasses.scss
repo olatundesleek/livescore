@@ -194,6 +194,15 @@
 			@extend .grid;
 			place-items: center;
 		}
+
+		&-align-center {
+			@extend .grid;
+			align-items: center;
+		}
+		&-justify-center {
+			@extend .grid;
+			justify-content: center;
+		}
 	}
 
 	// COLORS
