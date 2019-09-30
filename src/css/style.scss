@@ -14,63 +14,24 @@
 
 // UNIVERSAL SELECTION IS SLOW :)
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.15s linear;
-  -webkit-transition: all 0.15s linear;
-  -moz-transition: all 0.15s linear;
-  -ms-transition: all 0.15s linear;
-  -o-transition: all 0.15s linear;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	transition: all 0.15s linear;
+	-webkit-transition: all 0.15s linear;
+	-moz-transition: all 0.15s linear;
+	-ms-transition: all 0.15s linear;
+	-o-transition: all 0.15s linear;
 }
 
 body {
-  background: $white;
+	background: $white;
 }
 
 // overlay-loader ( a loader overlay that hides everything from the client for few secs on load :) )
-.overlay-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: $primary;
-  z-index: 20;
-  animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
-  // animation: overlay-loader-fade-top 0.5s 2s forwards;
-  // animation: overlay-loader-fade 0.5s 2s forwards;
-
-  i {
-    @include w-h(65px);
-    font-size: 45px;
-    color: $white;
-    animation: spin-loader-ball 1s ease-out infinite;
-  }
-
-  .loader {
-    @include container-round(85px);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    border: 5px dotted transparent;
-    animation: loader-dots 0.6s infinite alternate-reverse;
-  }
-
-  @include screen-900 {
-    i {
-      font-size: 25px;
-    }
-
-    .loader {
-      @include container-round(65px);
-    }
-  }
-}
 
 @import "./partials/modules/header";
+@import "./partials/buttons";
 @import "./partials/modules/main";
 
 // RE-USABLE CLASS MIXIN

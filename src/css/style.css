@@ -94,52 +94,6 @@ body {
   background: #f7f4f4;
 }
 
-.overlay-loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: #0092c6;
-  z-index: 20;
-  -webkit-animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
-          animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
-}
-
-.overlay-loader i {
-  width: 65px;
-  height: 65px;
-  font-size: 45px;
-  color: #f7f4f4;
-  -webkit-animation: spin-loader-ball 1s ease-out infinite;
-          animation: spin-loader-ball 1s ease-out infinite;
-}
-
-.overlay-loader .loader {
-  border-radius: 50%;
-  width: 85px;
-  height: 85px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  padding: 20px;
-  border: 5px dotted transparent;
-  animation: loader-dots 0.6s infinite alternate-reverse;
-}
-
-@media only screen and (min-width: 900px) {
-  .overlay-loader i {
-    font-size: 25px;
-  }
-  .overlay-loader .loader {
-    border-radius: 50%;
-    width: 65px;
-    height: 65px;
-  }
-}
-
 #header {
   color: #f7f4f4;
   position: -webkit-sticky;
@@ -242,8 +196,47 @@ body {
   }
 }
 
+a {
+  color: #0092c6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.btn, .btn-light, .btn-dark {
+  padding: 0.75rem 1.5rem;
+  border: 3px solid #f7f4f4;
+  background: none;
+}
+
+.btn-light {
+  color: #f7f4f4;
+}
+
+.btn-light:hover {
+  background: #f7f4f4;
+  color: #ababab;
+}
+
+.btn-dark {
+  color: #ababab;
+  border-color: #ababab;
+}
+
+.btn-dark:hover {
+  background: #ababab;
+  color: #ebebeb;
+}
+
+.btn:hover, .btn-light:hover, .btn-dark:hover {
+  cursor: pointer;
+}
+
 #main {
   color: #fff;
+  position: relative;
 }
 
 #main .tab ul li {
@@ -260,7 +253,7 @@ body {
 
 #main .tab-1 ul li a {
   padding: 0.75rem 0;
-  width: 79px;
+  width: 65px;
   background: #f7f4f4;
   color: #25816a;
   border-right: 0.5px solid rgba(0, 0, 0, 0.5);
@@ -314,88 +307,101 @@ body {
   font-size: 90%;
 }
 
-#main #events-table .league {
-  border-width: 3px;
-  border-style: solid;
+#main .table {
+  border: 1.5px solid #d1d1d1;
+  border-top: none;
+  margin-top: 0.75rem;
 }
 
-#main #events-table .league-name {
+#main .table-name {
   text-transform: capitalize;
 }
 
-#main #events-table .league:nth-child(odd) {
-  border-color: #005a7a;
-}
-
-#main #events-table .league:nth-child(odd) .league-name {
-  background: #005a7a;
-}
-
-#main #events-table .league:nth-child(even) {
+#main .table-1 {
   border-color: #0092c6;
 }
 
-#main #events-table .league:nth-child(even) .league-name {
-  background: #0092c6;
+#main .table-1 .table-name {
+  background: rgba(0, 146, 198, 0.5);
+  border: 2px solid #0092c6;
 }
 
-#main #events-table .league .event {
+#main .table-2 {
+  border-color: #d1d1d1;
+}
+
+#main .table-2 .table-name {
+  background: rgba(209, 209, 209, 0.5);
+  color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #d1d1d1;
+}
+
+#main .table-2-content ul li {
+  border-bottom: 1px solid #d1d1d1;
+  padding: 0.75rem;
+}
+
+#main .table-2-content ul li:nth-child(odd), #main .table-2-content ul li:hover {
+  background: #ebebeb;
+}
+
+#main .table .event {
   position: relative;
   padding: 0 0.375rem;
   -ms-grid-columns: 1fr 55px 1fr;
       grid-template-columns: 1fr 55px 1fr;
 }
 
-#main #events-table .league .event-team {
+#main .table .event-team {
   position: relative;
   z-index: 1;
 }
 
-#main #events-table .league .event-team-name {
+#main .table .event-team-name {
   text-transform: uppercase;
 }
 
-#main #events-table .league .event-team-logo img {
+#main .table .event-team-logo img {
   width: 40px;
   height: 40px;
   margin: 0.375rem;
 }
 
-#main #events-table .league .event-team-home {
+#main .table .event-team-home {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
-#main #events-table .league .event-team-away {
+#main .table .event-team-away {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
 }
 
-#main #events-table .league .event-details {
+#main .table .event-details {
   position: relative;
   z-index: 1;
   background: rgba(106, 212, 186, 0.4);
 }
 
-#main #events-table .league .event-details .event-detail {
+#main .table .event-details .event-detail {
   width: 55px;
   height: 40px;
 }
 
-#main #events-table .league .event-details .event-detail-scoreboard .event-detail-score {
+#main .table .event-details .event-detail-scoreboard .event-detail-score {
   padding: 0 0.1375rem;
   font-size: 130%;
   font-weight: bold;
 }
 
-#main #events-table .league .event-details .event-detail-current-time {
+#main .table .event-details .event-detail-current-time {
   border-bottom: 2px solid #f7f4f4;
   border-top: 1px solid rgba(255, 255, 255, 0.312);
 }
 
-#main #events-table .league .event::before {
+#main .table .event::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -410,28 +416,28 @@ body {
           box-shadow: inset 0 -15px 25px 7.5px #000;
 }
 
-#main #events-table .league .event-1::before {
+#main .table .event-1::before {
   background-image: url("../img/teamfiles/stadium1.jpg");
 }
 
-#main #events-table .league .event-2::before {
+#main .table .event-2::before {
   background-image: url("../img/teamfiles/stadium2.jpg");
 }
 
-#main #events-table .league .event-3::before {
+#main .table .event-3::before {
   background-image: url("../img/teamfiles/stadium3.jpg");
 }
 
-#main #events-table .league .event-4::before {
+#main .table .event-4::before {
   background-image: url("../img/teamfiles/stadium4.jpg");
 }
 
-#main #events-table .league .event-5::before {
+#main .table .event-5::before {
   background-image: url("../img/teamfiles/stadium5.jpg");
 }
 
 @media only screen and (min-width: 360px) {
-  #main #events-table .event-team {
+  #main #events .event-team {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -449,7 +455,7 @@ body {
 
 @media only screen and (min-width: 500px) {
   #main .tab-1 ul li a {
-    width: 110px;
+    width: 100px;
   }
   #main .tab-1 ul li a i {
     font-size: 160%;
@@ -628,6 +634,112 @@ body {
 .pad-none-right,
 .pad-r-0 {
   padding-right: 0;
+}
+
+.overlay-loader {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 7;
+  background: #0092c6;
+  -webkit-animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
+          animation: overlay-loader-fade-to-bottom 0.7s ease-out 2s forwards;
+}
+
+.overlay-loader i {
+  width: 65px;
+  height: 65px;
+  font-size: 45px;
+  color: #f7f4f4;
+  -webkit-animation: spin-loader-ball 1s ease-out infinite;
+          animation: spin-loader-ball 1s ease-out infinite;
+}
+
+.overlay-loader .loader {
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 20px;
+  border: 5px dotted transparent;
+  animation: loader-dots 0.6s infinite alternate-reverse;
+}
+
+@media only screen and (min-width: 900px) {
+  .overlay-loader i {
+    font-size: 25px;
+  }
+  .overlay-loader .loader {
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 61px;
+  z-index: 5;
+  background: #f7f4f4;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  -webkit-transform: rotateX(90deg);
+          transform: rotateX(90deg);
+  width: 100%;
+  height: calc(100vh - 61px);
+  overflow-y: auto;
+  color: #2a2e3e;
+}
+
+.modal-toggle {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+}
+
+.modal input {
+  width: 100%;
+  padding: 0.75rem;
+  outline-color: #36bc9b;
+  margin-top: 0.75em;
+}
+
+.modal .search-bar {
+  position: relative;
+}
+
+.modal .search-bar .search, .modal .search-bar .dropdown {
+  position: absolute;
+}
+
+.modal .search-bar .dropdown {
+  right: 0.75rem;
+  top: 1rem;
+}
+
+.modal .search-instruction {
+  margin-top: calc(43px + 0.75rem);
+  opacity: 0.8;
+  padding: 0 0.375rem;
+}
+
+.font-w-bold {
+  font-weight: bold;
+}
+
+.text-t-cap {
+  text-transform: capitalize;
+}
+
+.text-t-upper {
+  text-transform: uppercase;
+}
+
+.text-t-lower {
+  text-transform: lowercase;
 }
 
 .flex, .flex-center, .flex-align-center, .flex-justify-center, .flex-direction-column, .flex-wrap, .flex-child-grow {
