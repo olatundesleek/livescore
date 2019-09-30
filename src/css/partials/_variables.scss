@@ -29,6 +29,11 @@ $danger: #e26959;
 $danger-light: lighten($danger, 15%);
 $danger-dark: darken($danger, 15%);
 
+// WARNING
+$warning: #f7e061;
+$warning-light: lighten($warning, 15%);
+$warning-dark: darken($warning, 15%);
+
 // FREQUENTLY USED
 $default: #d1d1d1;
 $default-dark: darken($default, 15%);

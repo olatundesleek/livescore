@@ -188,37 +188,58 @@
 		background: $white;
 		transform-origin: top;
 		transform: rotateX(90deg);
+		@include container($h: calc(100vh - #{$header-nav-bar-height}));
+		color: $black;
 
 		&-toggle {
 			transform: rotateX(0);
 		}
+	}
 
-		@include container($h: calc(100vh - #{$header-nav-bar-height}));
-		color: $black;
-		input {
-			width: 100%;
-			padding: 0.75rem;
-			outline-color: $success;
-			margin-top: 0.75em;
-		}
-		.search-bar {
+	// form class
+	.form {
+		.form-group {
+			margin-top: 0.375em;
+			margin-bottom: 0.375em;
 			position: relative;
+
+			.form-control {
+				width: 100%;
+				padding: 0.75rem;
+				outline-color: $danger;
+				color: $danger;
+				border-radius: 3px;
+				border: 1px solid $default-dark;
+			}
 
 			.search {
 				position: absolute;
 			}
 
-			.dropdown {
+			.dropdown-link,
+			i {
 				@extend .search;
 				right: 0.75rem;
-				top: 1rem;
+				top: 0.75rem;
+
+				i {
+					position: unset;
+					color: inherit;
+				}
+			}
+
+			i {
+				color: $danger;
 			}
 		}
 
-		.search-instruction {
-			margin-top: calc(43px + 0.75rem);
+		.input-instruction {
 			opacity: 0.8;
 			padding: 0 0.375rem;
+		}
+
+		.buttons {
+			margin-top: 1.5rem;
 		}
 	}
 
@@ -306,6 +327,9 @@
 
 	// COLORS
 	.bg {
+		&-white {
+			background: $white;
+		}
 		// bg color for BLUE
 		&-primary {
 			background: $primary;
@@ -335,6 +359,82 @@
 		}
 		&-danger-light {
 			background: $danger-light;
+		}
+	}
+	// text colors
+	.color {
+		&-white {
+			color: $white;
+		}
+		// color for BLUE
+		&-primary {
+			color: $primary;
+		}
+		&-primary-dark {
+			color: $primary-dark;
+		}
+		&-primary-light {
+			color: $primary-light;
+		}
+		// color for Green
+		&-success {
+			color: $success;
+		}
+		&-success-dark {
+			color: $success-dark;
+		}
+		&-success-light {
+			color: $success-light;
+		}
+		// color for RED
+		&-danger {
+			color: $danger;
+		}
+		&-danger-dark {
+			color: $danger-dark;
+		}
+		&-danger-light {
+			color: $danger-light;
+		}
+	}
+	// border colors
+	.border {
+		&-white {
+			border-color: $white;
+		}
+		// border color for BLUE
+		&-primary {
+			border-color: $primary;
+		}
+		&-primary-dark {
+			border-color: $primary-dark;
+		}
+		&-primary-light {
+			border-color: $primary-light;
+		}
+		// border color for Green
+		&-success {
+			border-color: $success;
+		}
+		&-success-dark {
+			border-color: $success-dark;
+		}
+		&-success-light {
+			border-color: $success-light;
+		}
+		// border color for RED
+		&-danger {
+			border-color: $danger;
+		}
+		&-danger-dark {
+			border-color: $danger-dark;
+		}
+		&-danger-light {
+			border-color: $danger-light;
+		}
+		// border none
+		&-none {
+			border: none;
 		}
 	}
 }

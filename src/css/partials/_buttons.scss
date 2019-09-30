@@ -52,8 +52,10 @@ a {
 
 .btn {
 	padding: 0.75rem 1.5rem;
-	border: 3px solid $white;
+	border: 1.5px solid $default-dark;
+	color: $default-dark;
 	background: none;
+	border-radius: 3px;
 
 	&-light {
 		@extend .btn;
@@ -67,14 +69,60 @@ a {
 
 	&-dark {
 		@extend .btn;
-		color: $default-dark;
-		border-color: $default-dark;
+		color: $black;
+		border-color: $black;
 
 		&:hover {
-			background: $default-dark;
+			background: $black;
 			color: $default-light;
 		}
 	}
+
+	&-danger {
+		@extend .btn;
+		background: $danger;
+		border-color: $danger-dark;
+		color: $white;
+
+		&:hover {
+			color: $danger-light;
+			background: $danger-dark;
+		}
+	}
+	&-warning {
+		@extend .btn;
+		background: $warning;
+		border-color: $warning-dark;
+		color: $white;
+
+		&:hover {
+			color: $warning-light;
+			background: $warning-dark;
+		}
+	}
+	&-success {
+		@extend .btn;
+		background: $success;
+		border-color: $success-dark;
+		color: $white;
+
+		&:hover {
+			color: $success-light;
+			background: $success-dark;
+		}
+	}
+	&-primary {
+		@extend .btn;
+		background: $primary;
+		border-color: $primary-dark;
+		color: $white;
+
+		&:hover {
+			color: $primary-light;
+			background: $primary-dark;
+		}
+	}
+
 	&:hover {
 		cursor: pointer;
 	}
