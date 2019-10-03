@@ -194,6 +194,33 @@
 		&-toggle {
 			transform: rotateX(0);
 		}
+
+		&-close-btn {
+			margin-top: 0.75em;
+			position: relative;
+			left: calc(100vw - 40PX);
+			@include container-round(30px);
+			animation: breath 1s ease-in-out infinite alternate;
+			border: 3px solid $danger;
+
+			i,
+			.fa,
+			.fas {
+				color: $danger;
+			}
+
+			&:hover {
+				cursor: pointer;
+				background: $danger;
+				border: none;
+
+				i,
+				.fa,
+				.fas {
+					color: $white;
+				}
+			}
+		}
 	}
 
 	// form class
@@ -206,8 +233,6 @@
 			.form-control {
 				width: 100%;
 				padding: 0.75rem;
-				outline-color: $danger;
-				color: $danger;
 				border-radius: 3px;
 				border: 1px solid $default-dark;
 			}
@@ -227,9 +252,27 @@
 					color: inherit;
 				}
 			}
+		}
+		.form-group-error {
+			.form-control {
+				outline-color: $danger;
+				color: $danger;
+				border-radius: 6x;
+			}
 
 			i {
 				color: $danger;
+			}
+		}
+		.form-group-success {
+			.form-control {
+				outline-color: $success;
+				color: $success;
+				border-radius: 6x;
+			}
+
+			i {
+				color: $success;
 			}
 		}
 

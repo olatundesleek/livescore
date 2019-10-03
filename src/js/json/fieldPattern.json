@@ -1,0 +1,5 @@
+{
+	"password": "[\\w\\W]{8,}",
+	"username": "[A-Za-z0-9]{8,}",
+	"email": "^[A-Za-z\\d]+@[a-z]+\\.[a-z]+$"
+}
