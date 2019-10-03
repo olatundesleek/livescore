@@ -198,7 +198,7 @@
 		&-close-btn {
 			margin-top: 0.75em;
 			position: relative;
-			left: calc(100vw - 40PX);
+			left: calc(100vw - 60PX);
 			@include container-round(30px);
 			animation: breath 1s ease-in-out infinite alternate;
 			border: 3px solid $danger;
