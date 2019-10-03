@@ -749,7 +749,7 @@ a:hover {
 .modal-close-btn {
   margin-top: 0.75em;
   position: relative;
-  left: calc(100vw - 60PX);
+  left: calc(100vw - 60px);
   border-radius: 50%;
   width: 30px;
   height: 30px;
